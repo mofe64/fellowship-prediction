@@ -37,4 +37,4 @@ class Test(Resource):
 
 
 api.add_resource(Profile, "/profile")
-api.add_resource(Test, "/status")
+api.add_resource(Test, "/")
