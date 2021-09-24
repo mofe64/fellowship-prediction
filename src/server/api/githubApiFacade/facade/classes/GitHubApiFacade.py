@@ -31,12 +31,19 @@ class GitHubApiFacade:
             response_api = requests.get(API_ENDPOINT, headers=self.__headers)
             response_result = response_api.json()
             return response_result[feature] if str(response_api.status_code)[0] == '2' else None
+<<<<<<< HEAD
 
         except:
             return None
 
     def __fetch_feature_route(self, feature):
+=======
+>>>>>>> upstream/main
 
+        except:
+            return None
+
+    def __fetch_feature_route(self, feature):
         try:
             API_ENDPOINT = EndPointsFactory(
                 self.__base_url, self.__username, feature).generate()
@@ -105,9 +112,13 @@ class GitHubApiFacade:
     def get_feature(self, feature):
 
         if(feature == API_FEATURES.FOLLOWERS.value):
+<<<<<<< HEAD
             print("followers")
             test = self.__get_followers()
             return test
+=======
+            return self.__get_followers()
+>>>>>>> upstream/main
         if(feature == API_FEATURES.PUBLIC_REPOS.value):
             return self.__get_public_repos()
         if(feature == API_FEATURES.STARGAZERS_COUNT.value):
